@@ -1,0 +1,17 @@
+# Службові файли Claude і локального сервера
+.claude/
+
+# Робочі документи (не потрібні для сайту на GitHub Pages)
+*.docx
+Звіт.md
+research-report.md
+content-plan.md
+plan.md
+handoff.md
+
+# Системні й тимчасові файли
+Thumbs.db
+desktop.ini
+.DS_Store
+~$*
+.vscode/

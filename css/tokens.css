@@ -1,0 +1,58 @@
+/* Software and Computer Museum — generated from tokens.json */
+:root, [data-theme="light"] {
+  --brand-primary: #233a7e;
+  --brand-secondary: #1c4587;
+  --brand-deep: #152454;
+  --ink: #172757;
+  --ink-muted: #46557f;
+  --surface: #ffffff;
+  --surface-tint: #eef2fa;
+  --surface-tint-strong: #dfe6f4;
+  --on-brand: #ffffff;
+  --on-brand-muted: #cdd7ef;
+  --line: var(--brand-primary);
+  --line-soft: #8798c4;
+  --focus: var(--brand-primary);
+  --focus-on-brand: #ffffff;
+  --shadow-window: 6px 6px 0 #152454;
+  --shadow-window-mobile: 4px 4px 0 #152454;
+  --shadow-button: 4px 4px 0 #152454;
+  --shadow-button-on-brand: 4px 4px 0 #152454;
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-round: 50%;
+  --tap-min: 48px;
+  --border-control: 2px;
+  --border-focus: 3px;
+  --container-max: 1200px;
+  --form-max: 560px;
+  --bp-mobile: 360px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1280px;
+  --font-pixel: "Handjet", "Courier New", monospace;
+  --font-sans: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+}
+.display { font-family: var(--font-pixel); font-size: 80px; line-height: 80px; font-weight: 700; }
+.display-mobile { font-family: var(--font-pixel); font-size: 44px; line-height: 44px; font-weight: 700; }
+.h2 { font-family: var(--font-pixel); font-size: 48px; line-height: 52px; font-weight: 600; }
+.h2-mobile { font-family: var(--font-pixel); font-size: 34px; line-height: 38px; font-weight: 600; }
+.card-title { font-family: var(--font-pixel); font-size: 30px; line-height: 34px; font-weight: 600; }
+.button { font-family: var(--font-pixel); font-size: 24px; line-height: 28px; font-weight: 600; }
+.lead { font-family: var(--font-sans); font-size: 22px; line-height: 32px; font-weight: 400; }
+.body { font-family: var(--font-sans); font-size: 18px; line-height: 28px; font-weight: 400; }
+.body-strong { font-family: var(--font-sans); font-size: 18px; line-height: 28px; font-weight: 600; }
+.small { font-family: var(--font-sans); font-size: 16px; line-height: 24px; font-weight: 400; }
+.titlebar { font-family: var(--font-mono); font-size: 16px; line-height: 20px; font-weight: 500; letter-spacing: 0.04em; }
+.prompt { font-family: var(--font-mono); font-size: 18px; line-height: 28px; font-weight: 400; }

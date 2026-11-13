@@ -1,0 +1,193 @@
+/* Fonts (Handjet, IBM Plex Sans, IBM Plex Mono) are loaded with <link> in each page's <head>. */
+
+/* Software and Computer Museum — component styles. Every colour, spacing and size comes from tokens.css.
+   var(--token, value) fallbacks equal the token in tokens.json and only cover the time before tokens.css is regenerated.
+   Font sizes and line heights are the type styles from tokens.json (text styles have no CSS variables).
+   Media queries cannot read variables: 1279px = bp-desktop − 1, 767px = bp-tablet − 1. */
+
+.scm, .scm *, .scm *::before, .scm *::after { box-sizing: border-box; }
+.scm { font-family: var(--font-sans); font-size: 18px; line-height: 28px; color: var(--ink); background: var(--surface); margin: 0; }
+.scm p { margin: 0; }
+.scm img.scm-icon { width: var(--icon-sm, 24px); height: var(--icon-sm, 24px); image-rendering: pixelated; flex: none; display: block; }
+.scm img.scm-icon--lg { width: var(--icon-md, 32px); height: var(--icon-md, 32px); }
+
+/* ---------- Focus ---------- */
+.scm :focus-visible { outline: var(--border-focus) solid var(--focus); outline-offset: var(--offset-xs, 2px); }
+.scm-on-brand :focus-visible, .scm .scm-on-brand :focus-visible { outline-color: var(--focus-on-brand); }
+
+/* ---------- Button ---------- */
+.scm-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+  min-height: var(--tap-min); padding: var(--space-3) var(--space-5);
+  font-family: var(--font-pixel); font-size: 24px; line-height: 28px; font-weight: 600;
+  border: var(--border-control) solid var(--brand-primary); border-radius: var(--radius-none);
+  box-shadow: var(--shadow-button); cursor: pointer; text-decoration: none; white-space: normal; text-align: center;
+  transition: transform .06s steps(1), box-shadow .06s steps(1);
+}
+.scm-btn:active { transform: translate(var(--space-1), var(--space-1)); box-shadow: none; }
+/* Hover = inversion (10.62:1 between states), never a shift between the two brand blues (1.14:1) */
+.scm-btn--primary { background: var(--brand-primary); color: var(--on-brand); }
+.scm-btn--primary:hover { background: var(--surface); color: var(--brand-primary); }
+.scm-btn--secondary { background: var(--surface); color: var(--brand-primary); }
+.scm-btn--secondary:hover { background: var(--brand-primary); color: var(--on-brand); }
+.scm-btn--inverse { background: var(--on-brand); color: var(--brand-primary); border-color: var(--on-brand); box-shadow: var(--shadow-button-on-brand); }
+.scm-btn--inverse:hover { background: transparent; color: var(--on-brand); border-color: var(--on-brand); }
+/* Secondary button on blue sections: outline in on-brand; hover inverts to a white fill */
+.scm-btn--secondary-inverse { background: transparent; color: var(--on-brand); border-color: var(--on-brand); box-shadow: var(--shadow-button-on-brand); }
+.scm-btn--secondary-inverse:hover { background: var(--on-brand); color: var(--brand-primary); border-color: var(--on-brand); }
+/* Icons inside buttons: use the blue Icons set; it turns white wherever the label is white */
+.scm-btn--primary img.scm-icon, .scm-btn--secondary:hover img.scm-icon, .scm-btn--inverse:hover img.scm-icon, .scm-btn--secondary-inverse img.scm-icon { filter: brightness(0) invert(1); }
+.scm-btn--primary:hover img.scm-icon, .scm-btn--secondary-inverse:hover img.scm-icon { filter: none; }
+.scm-btn--block { display: flex; width: 100%; }
+/* Disabled: not by colour alone — dashed border, no shadow, no hover/press change, and a label that says why */
+.scm-btn[disabled], .scm-btn[aria-disabled="true"],
+.scm-btn[disabled]:hover, .scm-btn[aria-disabled="true"]:hover,
+.scm-btn[disabled]:active, .scm-btn[aria-disabled="true"]:active { background: var(--surface-tint); color: var(--ink-muted); border-color: var(--ink-muted); border-style: dashed; box-shadow: none; transform: none; cursor: not-allowed; }
+.scm-btn[disabled] img.scm-icon, .scm-btn[aria-disabled="true"] img.scm-icon { filter: none; }
+
+/* ---------- Window (card frame) ---------- */
+.scm-window { background: var(--surface); border: var(--border-control) solid var(--brand-primary); box-shadow: var(--shadow-window); display: flex; flex-direction: column; min-width: 0; }
+.scm-window__bar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); min-height: var(--titlebar-height, 36px); padding: var(--space-1) var(--space-2) var(--space-1) var(--space-3); background: var(--brand-secondary); color: var(--on-brand); font-family: var(--font-mono); font-size: 16px; line-height: 20px; font-weight: 500; letter-spacing: var(--tracking-mono, .04em); text-transform: uppercase; }
+/* Decorative "lights" only: small flat squares, no frame or glyphs, so they never read as buttons */
+.scm-window__controls { display: flex; gap: var(--space-1); }
+.scm-window__controls span { width: var(--space-2); height: var(--space-2); background: var(--on-brand-muted); border-radius: 0; }
+.scm-window__body { padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); flex: 1; }
+.scm-window__title { font-family: var(--font-pixel); font-size: 30px; line-height: 34px; font-weight: 600; color: var(--brand-primary); margin: 0; }
+.scm-window__footer { margin-top: auto; padding-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-4); }
+
+/* ---------- Meta rows (duration, audience, price) ---------- */
+.scm-meta { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+.scm-meta li { display: flex; align-items: flex-start; gap: var(--space-2); color: var(--ink); }
+.scm-meta li img { margin-top: var(--offset-xs, 2px); }
+.scm-meta__label { color: var(--ink-muted); }
+.scm-price { font-weight: 600; font-size: 18px; line-height: 28px; color: var(--ink); display: flex; align-items: center; gap: var(--space-2); }
+
+/* ---------- Placeholder tag (temporary content) ---------- */
+.scm-placeholder-tag { display: inline-flex; align-items: center; gap: var(--space-1); align-self: flex-start; padding: 0 var(--space-2); border: var(--border-control) dashed var(--ink-muted); border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 16px; line-height: 24px; color: var(--ink-muted); background: var(--surface); }
+
+/* ---------- Exhibit ---------- */
+.scm-exhibit__photo { position: relative; aspect-ratio: 4 / 3; border-bottom: var(--border-control) solid var(--brand-primary); background-color: var(--surface-tint); background-image: linear-gradient(45deg, var(--surface-tint-strong) 25%, transparent 25%, transparent 75%, var(--surface-tint-strong) 75%), linear-gradient(45deg, var(--surface-tint-strong) 25%, transparent 25%, transparent 75%, var(--surface-tint-strong) 75%); background-size: var(--space-4) var(--space-4); background-position: 0 0, var(--space-2) var(--space-2); display: flex; align-items: center; justify-content: center; }
+.scm-exhibit__photo img.scm-icon { width: var(--icon-xl, 64px); height: var(--icon-xl, 64px); }
+.scm-exhibit__photo .scm-placeholder-tag { position: absolute; left: var(--space-3); top: var(--space-3); }
+.scm-exhibit__photo > img.scm-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+.scm-exhibit__year { font-family: var(--font-mono); font-size: 16px; line-height: 24px; color: var(--ink-muted); }
+
+/* ---------- Grid & sections ---------- */
+.scm-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-6) var(--space-5); }
+.scm-section { padding: var(--space-9) var(--space-8); }
+.scm-section--tint { background: var(--surface-tint); }
+.scm-section--brand { background: var(--brand-primary); color: var(--on-brand); }
+.scm-container { max-width: var(--container-max); margin: 0 auto; }
+.scm-section__head { display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-6); }
+.scm-section__title { font-family: var(--font-pixel); font-size: 48px; line-height: 56px; font-weight: 600; color: var(--brand-primary); margin: 0; }
+/* Decorative prefix: the empty alternative text keeps screen readers from announcing "greater than" */
+.scm-section__title::before { content: "> "; content: "> " / ""; color: var(--ink-muted); }
+.scm-section__lead { color: var(--ink-muted); max-width: var(--measure, 640px); }
+
+/* ---------- Terminal prompt + cursor (decor) ---------- */
+.scm-prompt { font-family: var(--font-mono); font-size: 18px; line-height: 28px; color: var(--ink-muted); }
+.scm-on-brand .scm-prompt { color: var(--on-brand-muted); }
+.scm-cursor { display: inline-block; width: .6em; height: 1em; margin-left: var(--offset-xs, 2px); vertical-align: calc(-1 * var(--offset-xs, 2px)); background: currentColor; animation: scm-blink 1s steps(1) 3; } /* blinks 3 times (3 s), then stays solid: WCAG 2.2.2 */
+@keyframes scm-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .scm-cursor { animation: none; } }
+
+/* ---------- Header ---------- */
+.scm-header { background: var(--brand-primary); color: var(--on-brand); border-bottom: var(--border-accent, 4px) solid var(--brand-deep); }
+.scm-header__inner { display: flex; align-items: center; gap: var(--space-5); min-height: var(--header-height, 80px); padding: var(--space-3) var(--space-8); max-width: calc(var(--container-max) + 2 * var(--space-8)); margin: 0 auto; }
+.scm-logo { display: inline-flex; align-items: center; gap: var(--space-2); min-height: var(--tap-min); color: var(--on-brand); text-decoration: none; font-family: var(--font-pixel); font-weight: 700; font-size: 24px; line-height: 28px; }
+.scm-logo span { white-space: nowrap; }
+.scm-nav { display: flex; gap: var(--space-1); margin-left: auto; }
+.scm-nav a { display: inline-flex; align-items: center; min-height: var(--tap-min); padding: 0 var(--space-3); color: var(--on-brand); font-family: var(--font-pixel); font-size: 24px; line-height: 28px; font-weight: 500; text-decoration: none; }
+.scm-nav a:hover { text-decoration: underline; text-decoration-thickness: var(--border-control); text-underline-offset: var(--underline-offset, 6px); }
+/* Current section: a "> " marker plus a thick underline, not a colour change (screen readers get aria-current) */
+.scm-nav a[aria-current="true"], .scm-nav a[aria-current="location"] { text-decoration: underline; text-decoration-thickness: var(--border-accent, 4px); text-underline-offset: var(--underline-offset, 6px); }
+.scm-nav a[aria-current="true"]::before, .scm-nav a[aria-current="location"]::before { content: "> "; content: "> " / ""; white-space: pre; }
+.scm-menu-btn { display: none; }
+
+/* ---------- Language switch ---------- */
+.scm-lang { display: inline-flex; gap: var(--space-1); padding: var(--offset-xs, 2px); border: var(--border-control) solid var(--on-brand); }
+.scm-lang button { min-width: var(--tap-min); min-height: var(--tap-min); padding: 0 var(--space-2); border: 0; background: transparent; color: var(--on-brand-muted); font-family: var(--font-pixel); font-size: 22px; line-height: 28px; font-weight: 600; cursor: pointer; }
+.scm-lang button[aria-pressed="true"] { background: var(--on-brand); color: var(--brand-primary); }
+/* Selected language also carries a dot marker, so the choice is not shown by fill alone */
+.scm-lang button[aria-pressed="true"]::before { content: ""; display: inline-block; width: var(--space-2); height: var(--space-2); margin-right: var(--space-1); vertical-align: middle; border-radius: var(--radius-round); background: currentColor; }
+.scm-lang button:not([aria-pressed="true"]):hover { color: var(--on-brand); text-decoration: underline; }
+
+/* ---------- Hero ---------- */
+.scm-hero { background: var(--brand-primary); color: var(--on-brand); padding: var(--space-9) var(--space-8); background-image: radial-gradient(var(--brand-secondary) var(--border-control), transparent var(--border-control)); background-size: var(--space-5) var(--space-5); }
+.scm-hero__inner { max-width: var(--container-max); margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-5); }
+.scm-hero__title { font-family: var(--font-pixel); font-size: 80px; line-height: 88px; font-weight: 700; margin: 0; max-width: var(--hero-title-max, 900px); }
+.scm-hero__lead { font-size: 22px; line-height: 34px; color: var(--on-brand); max-width: var(--measure, 640px); }
+.scm-hero__actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-5); max-width: var(--hero-actions-max, 840px); margin-top: var(--space-3); }
+
+/* ---------- Form ---------- */
+.scm-form { display: flex; flex-direction: column; gap: var(--space-5); max-width: var(--form-max); }
+.scm-field { display: flex; flex-direction: column; gap: var(--space-2); }
+.scm-field__label { font-weight: 600; font-size: 18px; line-height: 28px; color: var(--ink); }
+.scm-field__hint { font-size: 16px; line-height: 24px; color: var(--ink-muted); }
+.scm-input, .scm-select { width: 100%; min-height: var(--control-height, 56px); padding: var(--space-3) var(--space-4); font: inherit; font-size: 18px; color: var(--ink); background: var(--surface); border: var(--border-control) solid var(--line); border-radius: var(--radius-none); box-shadow: var(--shadow-inset, inset 3px 3px 0 var(--surface-tint-strong)); }
+.scm-select { appearance: none; padding-right: calc(2 * var(--space-4) + var(--icon-sm, 24px)); background-image: none; background-repeat: no-repeat; background-position: right var(--space-4) center; background-size: var(--icon-sm, 24px) var(--icon-sm, 24px); cursor: pointer; }
+.scm-input::placeholder { color: var(--ink-muted); }
+/* Field states: hover tints the fill; focus is the shared 3px ring; disabled is dashed and muted (not colour alone) */
+.scm-input:hover, .scm-select:hover { background-color: var(--surface-tint); }
+.scm-input:disabled, .scm-select:disabled, .scm-input[aria-disabled="true"], .scm-select[aria-disabled="true"] { background-color: var(--surface-tint); color: var(--ink-muted); border-color: var(--ink-muted); border-style: dashed; box-shadow: none; cursor: not-allowed; }
+/* Sending: the form is aria-busy, fields read-only, the submit button aria-disabled with a "Надсилаємо заявку…" label */
+.scm-form[aria-busy="true"] .scm-input, .scm-form[aria-busy="true"] .scm-select { background-color: var(--surface-tint); }
+.scm-field--error .scm-input, .scm-field--error .scm-select { border-width: var(--border-accent, 4px); padding: calc(var(--space-3) - var(--border-control)) calc(var(--space-4) - var(--border-control)); }
+.scm-field__error { display: flex; align-items: flex-start; gap: var(--space-2); padding: var(--space-2) var(--space-3); background: var(--brand-primary); color: var(--on-brand); font-weight: 600; font-size: 16px; line-height: 24px; }
+/* Form-level send failure: the same inverse plate as a field error, above the submit button, role="alert" */
+.scm-form__fail { display: flex; align-items: flex-start; gap: var(--space-2); padding: var(--space-3); background: var(--brand-primary); color: var(--on-brand); font-weight: 600; font-size: 16px; line-height: 24px; border: var(--border-control) solid var(--brand-primary); }
+.scm-success[hidden] { display: none; }
+.scm-success { display: flex; align-items: flex-start; gap: var(--space-3); }
+.scm-success__title { font-family: var(--font-pixel); font-size: 30px; line-height: 34px; font-weight: 600; color: var(--brand-primary); margin: 0 0 var(--space-1); }
+
+/* ---------- Contacts ---------- */
+.scm-contacts { display: flex; flex-direction: column; gap: var(--space-4); }
+.scm-contacts a { color: var(--brand-primary); font-weight: 600; text-underline-offset: var(--space-1); }
+.scm-contacts a:hover, .scm-footer a:hover { text-decoration: underline; text-decoration-thickness: var(--border-focus); }
+/* Phone links are often tapped on smartphones: full 48px target */
+.scm-contacts a[href^="tel:"], .scm-footer a[href^="tel:"] { display: inline-flex; align-items: center; min-height: var(--tap-min); }
+.scm-map { aspect-ratio: 16 / 9; border: var(--border-control) solid var(--brand-primary); background-color: var(--surface-tint); background-image: linear-gradient(var(--surface-tint-strong) var(--border-control), transparent var(--border-control)), linear-gradient(90deg, var(--surface-tint-strong) var(--border-control), transparent var(--border-control)); background-size: var(--space-6) var(--space-6); position: relative; display: flex; align-items: center; justify-content: center; }
+.scm-map .scm-placeholder-tag { position: absolute; left: var(--space-3); top: var(--space-3); }
+
+/* ---------- Footer ---------- */
+.scm-footer { background: var(--brand-deep); color: var(--on-brand); padding: var(--space-7) var(--space-8); border-top: var(--border-accent, 4px) solid var(--brand-primary); }
+.scm-footer__inner { max-width: var(--container-max); margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-5) var(--space-7); }
+.scm-footer__contacts { display: flex; flex-direction: column; gap: var(--space-1); font-size: 16px; line-height: 24px; }
+.scm-footer a { color: var(--on-brand); }
+.scm-footer__copy { width: 100%; font-size: 16px; line-height: 24px; color: var(--on-brand-muted); }
+
+.scm-header--compact .scm-header__inner { padding: var(--space-2) var(--space-4); min-height: var(--header-height-mobile, 64px); gap: var(--space-3); }
+.scm-header--compact .scm-nav, .scm-header--compact .scm-header__cta { display: none; }
+.scm-header--compact .scm-lang { margin-left: auto; }
+.scm-header--compact .scm-menu-btn { display: inline-flex; }
+.scm-menu-btn { min-height: var(--tap-min); padding: var(--space-2) var(--space-3); font-size: 22px; line-height: 28px; box-shadow: none; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1279px) {
+  .scm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .scm-section, .scm-hero { padding-left: var(--space-6); padding-right: var(--space-6); }
+  .scm-header__inner { padding-left: var(--space-6); padding-right: var(--space-6); gap: var(--space-3); }
+  .scm-nav a { padding: 0 var(--space-2); font-size: 22px; line-height: 28px; }
+  .scm-logo { font-size: 22px; line-height: 28px; }
+}
+
+/* ---------- Smartphone: simplified retro decor ---------- */
+@media (max-width: 767px) {
+  .scm-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+  .scm-section { padding: var(--space-7) var(--space-4); }
+  .scm-section__title { font-size: 34px; line-height: 40px; }
+  .scm-window__title, .scm-success__title { font-size: 28px; line-height: 32px; }
+  .scm-prompt { font-size: 16px; line-height: 24px; }
+  .scm-hero { padding: var(--space-7) var(--space-4); background-image: none; }
+  .scm-hero__title { font-size: 44px; line-height: 50px; }
+  .scm-hero__lead { font-size: 20px; line-height: 30px; }
+  .scm-hero__actions { grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
+  .scm-window { box-shadow: var(--shadow-window-mobile); }
+  .scm-window__controls { display: none; }
+  .scm-window__body { padding: var(--space-4); }
+  .scm-header__inner { padding: var(--space-2) var(--space-4); min-height: var(--header-height-mobile, 64px); gap: var(--space-3); }
+  .scm-header .scm-nav, .scm-header .scm-header__cta { display: none; }
+  .scm-header .scm-lang { margin-left: auto; }
+  .scm-menu-btn { display: inline-flex; }
+  .scm-footer { padding: var(--space-7) var(--space-4); }
+}

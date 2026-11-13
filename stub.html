@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Software and Computer Museum — сайт у розробці</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:wght@400&family=Rubik:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #42578C;
+      --yellow: #FAE530;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      background: #EEEFF0;
+      color: var(--blue);
+      font-family: "Literata", Georgia, serif;
+      text-align: center;
+    }
+    main { max-width: 40rem; }
+    .mark {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-bottom: 24px;
+      background: var(--yellow);
+    }
+    h1 {
+      margin: 0 0 16px;
+      font-family: "Rubik", Arial, sans-serif;
+      font-weight: 600;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      line-height: 1.15;
+    }
+    p {
+      margin: 0;
+      font-size: clamp(1.125rem, 3vw, 1.5rem);
+    }
+    .about {
+      margin-top: 32px;
+    }
+    .about p {
+      margin: 0 0 16px;
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+    .about a {
+      color: inherit;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="mark" aria-hidden="true"></span>
+    <h1>Software and Computer Museum</h1>
+    <p>Сайт у розробці</p>
+    <section class="about" aria-label="Про музей">
+      <p>У Software and Computer Museum у Харкові зібрано понад 300 експонатів: рідкісні комп’ютери, ігрові консолі й навіть роботів, яких засновники власноруч зібрали та відновили. Пристрої різних епох стоять поруч, тож видно, як техніка змінювалася від перших моделей до сучасних.</p>
+      <p>Оглядова екскурсія — для всіх охочих: 30 хвилин, безкоштовно, група до 10 осіб. Запис за телефоном <a href="tel:+380675394095">067 539 4095</a>.</p>
+    </section>
+  </main>
+</body>
+</html>

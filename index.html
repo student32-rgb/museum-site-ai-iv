@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Software and Computer Museum — курси, екскурсія, експонати</title>
+  <meta name="description" content="Software and Computer Museum у Харкові: безкоштовні курси, оглядова екскурсія та експонати з історії комп’ютерів. Запис за телефоном 067 539 4095.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;600&amp;family=Handjet:wght@400..700&amp;display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+<!-- Піксельні іконки 16×16 з дизайн-системи; на сторінці: <svg class="mus-ico"><use href="#i-…"/></svg> -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-monitor" viewBox="0 0 16 16"><path fill="currentColor" d="M1 2h14v10H1zM3 4v6h10V4zM6 12h4v2H6zM4 14h8v1H4z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 16 16"><path fill="currentColor" d="M5 1h6v1h2v2h1v2h1v4h-1v2h-1v2h-2v1H5v-1H3v-2H2v-2H1V6h1V4h1V2h2zM5 3v1H4v2H3v4h1v2h1v1h6v-1h1v-2h1V6h-1V4h-1V3zM7 5h2v3h3v2H7z"/></symbol>
+  <symbol id="i-people" viewBox="0 0 16 16"><path fill="currentColor" d="M4 2h4v4H4zM2 8h8v6H2zM11 3h3v3h-3zM11 8h4v5h-4z"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 16 16"><path fill="currentColor" d="M1 4h14v3h-1v2h1v3H1V9h1V7H1zM10 5v1h1V5zM10 7v2h1V7zM10 10v1h1v-1z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 16 16"><path fill="currentColor" d="M1 3h14v12H1zM3 7v6h10V7zM4 1h2v3H4zM10 1h2v3h-2zM5 9h2v2H5z"/></symbol>
+  <symbol id="i-floppy" viewBox="0 0 16 16"><path fill="currentColor" d="M1 1h11v1h1v1h1v1h1v11H1zM4 2v4h7V2zM3 9v5h10V9zM8 3h2v2H8z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 16 16"><path fill="currentColor" d="M2 3h12v2H2zM2 7h12v2H2zM2 11h12v2H2z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 16 16"><path fill="currentColor" d="M5 1h6v1h1v1h1v5h-1v2h-1v2h-1v2H9v2H7v-2H6v-2H5v-2H4V8H3V3h1V2h1zM7 4v2h2V4z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 16 16"><path fill="currentColor" d="M2 2h4v4H5v2h1v1h1v1h1v1h2v-1h4v4h-2v1H9v-1H7v-1H5v-1H4v-1H3v-2H2z"/></symbol>
+</svg>
+
+<div class="scm" id="top">
+<a class="mus-skip" href="#main">Перейти до основного вмісту</a>
+
+<!-- ============ 1. Шапка ============ -->
+<header class="scm-header scm-on-brand">
+  <div class="scm-header__inner">
+    <a class="scm-logo" href="#top" aria-label="Software and Computer Museum — на початок сторінки">
+      <svg class="mus-ico mus-ico--lg" aria-hidden="true"><use href="#i-monitor"/></svg>
+      <span>Software and Computer Museum</span>
+    </a>
+    <nav class="scm-nav" aria-label="Розділи сторінки">
+      <a href="#courses">Курси</a>
+      <a href="#tours">Екскурсія</a>
+      <a href="#exhibits">Експонати</a>
+      <a href="#about">Про музей</a>
+      <a href="#news">Новини</a>
+      <a href="#contacts">Контакти</a>
+    </nav>
+    <div class="scm-lang" role="group" aria-label="Мова сайту">
+      <button type="button" data-lang="ua" aria-pressed="true" aria-label="UA — українська мова">UA</button>
+      <button type="button" data-lang="en" aria-pressed="false" aria-label="EN — English" lang="en">EN</button>
+    </div>
+    <a class="mus-header-phone" href="tel:+380675394095" aria-label="Зателефонувати: 067 539 4095">
+      <svg class="mus-ico" aria-hidden="true"><use href="#i-phone"/></svg>
+      <span>067 539 4095</span>
+    </a>
+    <button type="button" class="scm-btn scm-btn--inverse scm-menu-btn" aria-expanded="false" aria-controls="mobile-nav">
+      <svg class="mus-ico" aria-hidden="true"><use href="#i-menu"/></svg>
+      <span>Меню</span>
+    </button>
+  </div>
+  <nav class="mus-mobile-nav" id="mobile-nav" aria-label="Меню" hidden>
+    <a href="#courses">Курси</a>
+    <a href="#tours">Екскурсія</a>
+    <a href="#exhibits">Експонати</a>
+    <a href="#about">Про музей</a>
+    <a href="#news">Новини</a>
+    <a href="#contacts">Контакти</a>
+    <a href="tel:+380675394095">Зателефонувати: 067 539 4095</a>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<div class="mus-lang-note" id="lang-note" role="status" lang="en" hidden>The English version of this page is being prepared. For now, all content is in Ukrainian. Questions: call <a href="tel:+380675394095">+380 67 539 4095</a>.</div>
+
+<!-- ============ 2. Перший екран ============ -->
+<section class="scm-hero scm-on-brand" aria-labelledby="hero-title">
+  <div class="mus-hero-grid">
+    <div class="scm-hero__inner">
+      <p class="scm-prompt" aria-hidden="true">C:\МУЗЕЙ&gt; вітаємо</p>
+      <!-- Ефект друку: повний текст для читачів екрана, видимий рядок друкує js/main.js (без руху при prefers-reduced-motion) -->
+      <h1 class="scm-hero__title" id="hero-title">
+        <span class="mus-sr">Доторкніться до історії комп’ютерів</span>
+        <span class="mus-type" aria-hidden="true"><span class="mus-type__ghost">Доторкніться до історії комп’ютерів</span><span class="mus-type__live" data-text="Доторкніться до історії комп’ютерів">Доторкніться до історії комп’ютерів</span></span>
+      </h1>
+      <p class="scm-hero__lead">Software and Computer Museum у Харкові. Двері музею відкриті для всіх, хто хоче доторкнутися до історії комп’ютерних технологій.</p>
+      <div class="mus-entry-grid">
+        <a class="mus-entry mus-entry--main mus-lift" href="#courses">
+          <span class="mus-entry__bar" aria-hidden="true">КУРСИ.EXE</span>
+          <span class="mus-entry__body">
+            <span class="mus-entry__title">Курси</span>
+            <span class="mus-entry__text">AI для дорослих і підлітків, програмування в Roblox Studio для дітей</span>
+            <span class="mus-entry__meta">3 курси · безкоштовно</span>
+          </span>
+        </a>
+        <a class="mus-entry mus-lift" href="#tours">
+          <span class="mus-entry__bar" aria-hidden="true">ЕКСКУРСІЯ.EXE</span>
+          <span class="mus-entry__body">
+            <span class="mus-entry__title">Екскурсія</span>
+            <span class="mus-entry__text">Оглядова екскурсія експонатами музею</span>
+            <span class="mus-entry__meta">30 хвилин · безкоштовно</span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="scm-window mus-terminal" aria-hidden="true">
+      <div class="scm-window__bar"><span>MUSEUM.EXE</span><span class="scm-window__controls"><span></span><span></span></span></div>
+<pre>C:\МУЗЕЙ&gt; dir
+
+КУРСИ          &lt;DIR&gt;
+ЕКСКУРСІЯ      &lt;DIR&gt;
+ЕКСПОНАТИ      &lt;DIR&gt;
+
+    300+ експонатів, 0 нудних
+
+C:\МУЗЕЙ&gt; </pre>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. Курси ============ -->
+<section class="scm-section" id="courses" aria-labelledby="courses-title">
+  <div class="scm-container">
+    <div class="scm-section__head">
+      <h2 class="scm-section__title" id="courses-title">Курси</h2>
+      <p class="scm-section__lead">Три безкоштовні курси, кожне заняття триває 90 хвилин. Запис за телефоном <a class="mus-link" href="tel:+380675394095">067 539 4095</a>.</p>
+    </div>
+    <div class="scm-grid">
+
+      <article class="scm-window mus-lift">
+        <div class="scm-window__bar" aria-hidden="true"><span>КУРС_01 · ДОРОСЛІ</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="scm-window__body">
+          <h3 class="scm-window__title">Всі можливості AI для роботи: реальні задачі та їх рішення</h3>
+          <p>Просунутий курс про роботу з Claude. Потрібні мінімальні знання роботи з ШІ.</p>
+          <ul class="scm-meta">
+            <li><svg class="mus-ico" aria-hidden="true"><use href="#i-people"/></svg><span><span class="scm-meta__label">Для кого:</span> дорослі 30+</span></li>
+            <li><svg class="mus-ico" aria-hidden="true"><use href="#i-monitor"/></svg><span><span class="scm-meta__label">Формат:</span> офлайн і онлайн</span></li>
+            <li><svg class="mus-ico" aria-hidden="true"><use href="#i-calendar"/></svg><span><span class="scm-meta__label">Тривалість:</span> приблизно 2–3 місяці</span></li>
+          </ul>
+          <div class="scm-window__footer">
+            <p class="scm-price"><svg class="mus-ico" aria-hidden="true"><use href="#i-ticket"/></svg><span><span class="scm-meta__label" style="font-weight: 400">Ціна:</span> безкоштовно</span></p>
+            <a class="scm-btn mus-btn-main scm-btn--block" href="tel:+380675394095" aria-label="Записатися на курс з AI для дорослих: зателефонувати 067 539 4095"><svg class="mus-ico" aria-hidden="true"><use href="#i-phone"/></svg><span>Записатися на курс</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="scm-window mus-lift">
+        <div class="scm-window__bar" aria-hidden="true"><span>КУРС_02 · ПІДЛІТКИ</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="scm-window__body">
+          <h3 class="scm-window__title">Всі можливості AI для роботи: реальні задачі та їх рішення</h3>
+          <p>Курс з AI для підлітків.</p>
+          <ul class="scm-meta">
+            <li><svg class="mus-ico" aria-hidden="true"><use href="#i-people"/></svg><span><span class="scm-meta__label">Для кого:</span> підлітки 14–19 років</span></li>
+            <li><svg class="mus-ico" aria-hidden="true"><use href="#i-monitor"/></svg><span><span class="scm-meta__label">Формат:</span> онлайн</span></li>
+            <li><svg class="mus-ico" aria-hidden="true"><use href="#i-calendar"/></svg><span><span class="scm-meta__label">Тривалість:</span> 2 місяці</span></li>
+          </ul>
+          <div class="scm-window__footer">
+            <p class="scm-price"><svg class="mus-ico" aria-hidden="true"><use href="#i-ticket"/></svg><span><span class="scm-meta__label" style="font-weight: 400">Ціна:</span> безкоштовно</span></p>
+            <a class="scm-btn mus-btn-main scm-btn--block" href="tel:+380675394095" aria-label="Записатися на курс з AI для підлітків: зателефонувати 067 539 4095"><svg class="mus-ico" aria-hidden="true"><use href="#i-phone"/></svg><span>Записатися на курс</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="scm-window mus-lift">
+        <div class="scm-window__bar" aria-hidden="true"><span>КУРС_03 · ДІТИ</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="scm-window__body">
+          <h3 class="scm-window__title">Програмування в Roblox Studio</h3>
+          <p>Діти створюють ігри. Попередня підготовка не потрібна.</p>
+          <ul class="scm-meta">
+            <li><svg class="mus-ico" aria-hidden="true"><use href="#i-people"/></svg><span><span class="scm-meta__label">Для кого:</span> діти 10–12 років</span></li>
+            <li><svg class="mus-ico" aria-hidden="true"><use href="#i-monitor"/></svg><span><span class="scm-meta__label">Формат:</span> онлайн</span></li>
+            <li><svg class="mus-ico" aria-hidden="true"><use href="#i-calendar"/></svg><span><span class="scm-meta__label">Тривалість:</span> пів року</span></li>
+          </ul>
+          <div class="scm-window__footer">
+            <p class="scm-price"><svg class="mus-ico" aria-hidden="true"><use href="#i-ticket"/></svg><span><span class="scm-meta__label" style="font-weight: 400">Ціна:</span> безкоштовно</span></p>
+            <a class="scm-btn mus-btn-main scm-btn--block" href="tel:+380675394095" aria-label="Записатися на курс «Програмування в Roblox Studio»: зателефонувати 067 539 4095"><svg class="mus-ico" aria-hidden="true"><use href="#i-phone"/></svg><span>Записатися на курс</span></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. Екскурсія ============ -->
+<section class="scm-section scm-section--tint" id="tours" aria-labelledby="tours-title">
+  <div class="scm-container">
+    <div class="scm-section__head">
+      <h2 class="scm-section__title" id="tours-title">Екскурсія</h2>
+      <p class="scm-section__lead">День і час узгоджуємо під час запису за телефоном <a class="mus-link" href="tel:+380675394095">067 539 4095</a>.</p>
+    </div>
+    <div class="scm-grid">
+
+      <article class="scm-window">
+        <div class="scm-window__bar" aria-hidden="true"><span>ЕКСКУРСІЯ_01</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="scm-window__body">
+          <h3 class="scm-window__title">Оглядова екскурсія</h3>
+          <p>Відвідувачі оглядають експонати музею — комп’ютери, ігрові консолі та інші пристрої різних епох.</p>
+          <ul class="scm-meta">
+            <li><svg class="mus-ico" aria-hidden="true"><use href="#i-clock"/></svg><span><span class="scm-meta__label">Тривалість:</span> 30 хвилин</span></li>
+            <li><svg class="mus-ico" aria-hidden="true"><use href="#i-people"/></svg><span><span class="scm-meta__label">Для кого:</span> для всіх</span></li>
+            <li><svg class="mus-ico" aria-hidden="true"><use href="#i-people"/></svg><span><span class="scm-meta__label">Група:</span> до 10 осіб</span></li>
+          </ul>
+          <div class="scm-window__footer">
+            <p class="scm-price"><svg class="mus-ico" aria-hidden="true"><use href="#i-ticket"/></svg><span><span class="scm-meta__label" style="font-weight: 400">Ціна:</span> безкоштовно</span></p>
+            <a class="scm-btn scm-btn--primary scm-btn--block" href="tel:+380675394095" aria-label="Записатися на оглядову екскурсію: зателефонувати 067 539 4095"><svg class="mus-ico" aria-hidden="true"><use href="#i-phone"/></svg><span>Записатися на екскурсію</span></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. Експонати ============ -->
+<section class="scm-section" id="exhibits" aria-labelledby="exhibits-title">
+  <div class="scm-container">
+    <div class="mus-head-row">
+      <div class="scm-section__head">
+        <h2 class="scm-section__title" id="exhibits-title">Експонати</h2>
+        <p class="scm-section__lead">6 експонатів 80–90-х — від дискети 5,25″ до модема</p>
+        <p class="scm-section__lead">Шість експонатів із понад 300 у колекції музею. <a class="mus-link" href="https://sncmuseum.org/exhibits">Усі експонати</a></p>
+      </div>
+      <span class="scm-placeholder-tag">Фото — заглушка</span>
+    </div>
+    <div class="scm-grid">
+
+      <article class="scm-window mus-lift">
+        <div class="scm-window__bar" aria-hidden="true"><span>ЕКСПОНАТ_01</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="mus-exhibit">
+          <div class="scm-exhibit__photo" role="img" aria-label="Кишеньковий комп’ютер Apple MessagePad із сенсорним екраном"><span class="scm-placeholder-tag">Фото — заглушка</span><svg class="mus-ico mus-ico--xl" aria-hidden="true"><use href="#i-monitor"/></svg></div>
+          <div class="scm-window__body">
+            <h3 class="scm-window__title">Кишеньковий комп’ютер MessagePad</h3>
+            <p class="scm-exhibit__year">Apple · 1993</p>
+            <p>Особистий цифровий помічник на ОС Newton із сенсорним екраном, задовго до появи слова «планшет».</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="scm-window mus-lift">
+        <div class="scm-window__bar" aria-hidden="true"><span>ЕКСПОНАТ_02</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="mus-exhibit">
+          <div class="scm-exhibit__photo" role="img" aria-label="Ігрова консоль Magnavox Odyssey"><span class="scm-placeholder-tag">Фото — заглушка</span><svg class="mus-ico mus-ico--xl" aria-hidden="true"><use href="#i-monitor"/></svg></div>
+          <div class="scm-window__body">
+            <h3 class="scm-window__title">Ігрова консоль Magnavox Odyssey</h3>
+            <p class="scm-exhibit__year">Magnavox · 1972</p>
+            <p>Перша консоль, яку можна було під’єднати до телевізора.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="scm-window mus-lift">
+        <div class="scm-window__bar" aria-hidden="true"><span>ЕКСПОНАТ_03</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="mus-exhibit">
+          <div class="scm-exhibit__photo" role="img" aria-label="Комп’ютер Apple II GS із клавіатурою"><span class="scm-placeholder-tag">Фото — заглушка</span><svg class="mus-ico mus-ico--xl" aria-hidden="true"><use href="#i-monitor"/></svg></div>
+          <div class="scm-window__body">
+            <h3 class="scm-window__title">Комп’ютер Apple II GS</h3>
+            <p class="scm-exhibit__year">Apple · 1986</p>
+            <p>Модель із лінійки Apple II, першого серійного комп’ютера компанії.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="scm-window mus-lift">
+        <div class="scm-window__bar" aria-hidden="true"><span>ЕКСПОНАТ_04</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="mus-exhibit">
+          <div class="scm-exhibit__photo" role="img" aria-label="Цифрова фотокамера Apple QuickTake 100"><span class="scm-placeholder-tag">Фото — заглушка</span><svg class="mus-ico mus-ico--xl" aria-hidden="true"><use href="#i-monitor"/></svg></div>
+          <div class="scm-window__body">
+            <h3 class="scm-window__title">Цифрова фотокамера Apple QuickTake 100</h3>
+            <p class="scm-exhibit__year">Apple разом із Kodak · 1994</p>
+            <p>Одна з перших цифрових фотокамер.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="scm-window mus-lift">
+        <div class="scm-window__bar" aria-hidden="true"><span>ЕКСПОНАТ_05</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="mus-exhibit">
+          <div class="scm-exhibit__photo" role="img" aria-label="Комп’ютер Commodore Amiga 600 у корпусі клавіатури"><span class="scm-placeholder-tag">Фото — заглушка</span><svg class="mus-ico mus-ico--xl" aria-hidden="true"><use href="#i-monitor"/></svg></div>
+          <div class="scm-window__body">
+            <h3 class="scm-window__title">Комп’ютер Commodore Amiga 600</h3>
+            <p class="scm-exhibit__year">Commodore · 1992</p>
+            <p>Повноцінний комп’ютер у корпусі клавіатури.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="scm-window mus-lift">
+        <div class="scm-window__bar" aria-hidden="true"><span>ЕКСПОНАТ_06</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="mus-exhibit">
+          <div class="scm-exhibit__photo" role="img" aria-label="Ігрова консоль Nintendo Famicom із джойстиками"><span class="scm-placeholder-tag">Фото — заглушка</span><svg class="mus-ico mus-ico--xl" aria-hidden="true"><use href="#i-monitor"/></svg></div>
+          <div class="scm-window__body">
+            <h3 class="scm-window__title">Ігрова консоль Nintendo Famicom</h3>
+            <p class="scm-exhibit__year">Nintendo · 1983</p>
+            <p>Оригінал консолі, клоном якої була відома в Україні Dendy.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <div class="mus-more">
+      <a class="scm-btn scm-btn--primary" href="https://sncmuseum.org/exhibits" aria-label="Показати більше експонатів — усі експонати музею">Показати більше</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. Коротка історія музею ============ -->
+<section class="scm-section scm-section--tint" id="about" aria-labelledby="about-title">
+  <div class="scm-container">
+    <div class="scm-section__head">
+      <h2 class="scm-section__title" id="about-title">Про музей</h2>
+    </div>
+    <div class="mus-about">
+      <div class="mus-about__text">
+        <p>Software and Computer Museum заснували в Харкові в серпні 2017 року Антон Трубніков, Сергій Цимбал і Олександр Коваленко. Засновники переконані, що саме програмне забезпечення рухало розвиток техніки, і власноруч зібрали та відновили рідкісні комп’ютери, ігрові консолі й навіть роботів.</p>
+        <p>Тут поруч стоять пристрої різних епох, тож видно, як техніка змінювалася від перших моделей до сучасних. Сьогодні в колекції понад 300 експонатів.</p>
+        <p><a class="mus-link" href="https://sncmuseum.org/o-muzee">Детальніше про музей</a></p>
+      </div>
+      <ul class="mus-facts">
+        <li><span class="mus-facts__num">2017</span><span>рік заснування</span></li>
+        <li><span class="mus-facts__num">300+</span><span>експонатів у колекції</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. Новини та анонси ============ -->
+<section class="scm-section" id="news" aria-labelledby="news-title">
+  <div class="scm-container">
+    <div class="scm-section__head">
+      <h2 class="scm-section__title" id="news-title">Новини та анонси</h2>
+      <p class="scm-section__lead"><a class="mus-link" href="https://sncmuseum.org/blog">Усі новини в блозі музею</a></p>
+    </div>
+    <div class="scm-grid">
+
+      <article class="scm-window">
+        <div class="scm-window__bar" aria-hidden="true"><span>НОВИНА_01</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="scm-window__body">
+          <p class="scm-exhibit__year"><time datetime="2026-10-06">06.10.2026</time></p>
+          <h3 class="scm-window__title mus-news-title">Музей запрошує підлітків 14–19 років на безкоштовний онлайн-курс з AI</h3>
+        </div>
+      </article>
+
+      <article class="scm-window">
+        <div class="scm-window__bar" aria-hidden="true"><span>НОВИНА_02</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="scm-window__body">
+          <p class="scm-exhibit__year"><time datetime="2026-10-03">03.10.2026</time></p>
+          <h3 class="scm-window__title mus-news-title">29 вересня стартував просунутий курс «Всі можливості AI для роботи: реальні задачі та їх рішення»</h3>
+        </div>
+      </article>
+
+      <article class="scm-window">
+        <div class="scm-window__bar" aria-hidden="true"><span>НОВИНА_03</span><span class="scm-window__controls"><span></span><span></span></span></div>
+        <div class="scm-window__body">
+          <p class="scm-exhibit__year"><time datetime="2026-09-25">25.09.2026</time></p>
+          <h3 class="scm-window__title mus-news-title">Музей відвідали дев’ятикласники IT Step Academy</h3>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. Адреса й телефон ============ -->
+<section class="scm-section scm-section--tint" id="contacts" aria-labelledby="contacts-title">
+  <div class="scm-container">
+    <div class="scm-section__head">
+      <h2 class="scm-section__title" id="contacts-title">Контакти</h2>
+    </div>
+    <div class="mus-contacts-grid">
+      <div class="scm-contacts">
+        <ul class="mus-contacts-list">
+          <li><svg class="mus-ico" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="mus-label">Адреса</span>вул. Григорія Сковороди, 79/1, Харків, Харківська область, 61000<br><span class="mus-muted">Метро «Ярослава Мудрого»</span></span></li>
+          <li><svg class="mus-ico" aria-hidden="true"><use href="#i-clock"/></svg><span><span class="mus-label">Години роботи</span>Вівторок–субота: 10:00–18:00<br><span class="mus-muted">Неділя й понеділок — вихідні</span></span></li>
+          <li><svg class="mus-ico" aria-hidden="true"><use href="#i-phone"/></svg><span><span class="mus-label">Телефон для запису на курси й екскурсію</span><a href="tel:+380675394095">067 539 4095</a></span></li>
+        </ul>
+        <a class="scm-btn scm-btn--secondary" href="https://www.google.com/maps/search/?api=1&amp;query=%D0%B2%D1%83%D0%BB.+%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%96%D1%8F+%D0%A1%D0%BA%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%2C+79%2F1%2C+%D0%A5%D0%B0%D1%80%D0%BA%D1%96%D0%B2" target="_blank" rel="noopener" aria-describedby="route-hint" style="align-self: flex-start">
+          <svg class="mus-ico" aria-hidden="true"><use href="#i-pin"/></svg>
+          <span>Прокласти маршрут до музею</span>
+        </a>
+        <p class="scm-field__hint" id="route-hint" style="margin-top: calc(-1 * var(--space-2))">Карта відкриється в новій вкладці.</p>
+      </div>
+      <div class="scm-map" role="img" aria-label="Карта району з позначкою музею за адресою: вул. Григорія Сковороди, 79/1, Харків">
+        <span class="scm-placeholder-tag">Карта — заглушка</span>
+        <svg class="mus-ico mus-ico--xl" aria-hidden="true"><use href="#i-pin"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ 9. Підвал ============ -->
+<footer class="scm-footer scm-on-brand">
+  <div class="scm-footer__inner mus-footer">
+    <div class="mus-footer__col">
+      <a class="scm-logo" href="#top" aria-label="Software and Computer Museum — на початок сторінки">
+        <svg class="mus-ico mus-ico--lg" aria-hidden="true"><use href="#i-monitor"/></svg>
+        <span>Software and Computer Museum</span>
+      </a>
+      <div class="scm-footer__contacts">
+        <span>вул. Григорія Сковороди, 79/1, Харків</span>
+        <a href="tel:+380675394095">067 539 4095</a>
+        <a href="mailto:contact@sncmuseum.org">contact@sncmuseum.org</a>
+        <span>Вт–Сб: 10:00–18:00</span>
+      </div>
+    </div>
+    <nav class="mus-footer__col" aria-labelledby="f-site">
+      <p class="mus-footer__title" id="f-site">Музей</p>
+      <ul class="mus-footer__list">
+        <li><a href="https://sncmuseum.org/o-muzee">Про музей</a></li>
+        <li><a href="https://sncmuseum.org/exhibits">Експонати</a></li>
+        <li><a href="https://sncmuseum.org/osvita">Освіта</a></li>
+        <li><a href="https://sncmuseum.org/blog">Блог музею</a></li>
+        <li><a href="https://sncmuseum.org/pidtrimay-muzey">Підтримай музей</a></li>
+      </ul>
+    </nav>
+    <nav class="mus-footer__col" aria-labelledby="f-social">
+      <p class="mus-footer__title" id="f-social">Соцмережі</p>
+      <ul class="mus-footer__list">
+        <li><a href="https://www.facebook.com/sncmuseum/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/sncmuseum/">Instagram</a></li>
+        <li><a href="https://www.youtube.com/channel/UC9It_Lt3eiRc2hcIG_syfBA">YouTube</a></li>
+        <li><a href="https://t.me/sncmuseum">Telegram</a></li>
+      </ul>
+    </nav>
+    <nav class="mus-footer__col" aria-labelledby="f-docs">
+      <p class="mus-footer__title" id="f-docs">Документи</p>
+      <ul class="mus-footer__list">
+        <li><a href="https://sncmuseum.org/media/1/%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D1%96%D1%80_%D0%BF%D1%80%D0%BE_%D0%BD%D0%B0%D0%B4%D0%B0%D0%BD%D0%BD%D1%8F_%D0%B1%D0%BB%D0%B0%D0%B3%D0%BE%D0%B4%D1%96%D0%B8%CC%86%D0%BD%D0%B8%D1%85_%D0%BF%D0%BE%D1%81%D0%BB%D1%83%D0%B3.pdf">Договір про надання благодійних послуг (PDF)</a></li>
+        <li><a href="https://sncmuseum.org/media/1/%D0%9F%D0%BE%D0%BB%D1%96%D1%82%D0%B8%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BD%D1%84%D1%96%D0%B4%D0%B5%D1%86%D1%96%D0%B9%D0%BD%D0%BE%D1%81%D1%82%D1%96_v2.pdf">Політика конфіденційності (PDF)</a></li>
+        <li><a href="https://sncmuseum.org/media/1/%D0%A3%D0%BC%D0%BE%D0%B2%D0%B8_%D0%BA%D0%BE%D1%80%D0%B8%D1%81%D1%82%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F_v2.pdf">Умови користування (PDF)</a></li>
+      </ul>
+    </nav>
+    <div class="mus-footer__bottom">
+      <p class="scm-footer__copy">© 2026 Software and Computer Museum</p>
+      <div class="scm-lang" role="group" aria-label="Мова сайту">
+        <button type="button" data-lang="ua" aria-pressed="true" aria-label="UA — українська мова">UA</button>
+        <button type="button" data-lang="en" aria-pressed="false" aria-label="EN — English" lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Кругла кнопка дзвінка: закріплена праворуч і видна на будь-якому екрані -->
+<a class="mus-call-fab" href="tel:+380675394095" aria-label="Зателефонувати в музей: 067 539 4095">
+  <svg class="mus-ico mus-ico--lg" aria-hidden="true"><use href="#i-phone"/></svg>
+</a>
+
+</div>
+</body>
+</html>
